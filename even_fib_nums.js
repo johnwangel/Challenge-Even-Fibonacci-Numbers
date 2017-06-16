@@ -6,9 +6,20 @@
  * @return {Number} sum
  */
 function _sumFibs( maxFibValue ) {
-  var sum = 0;
-
-  // do your work here
+  let sum = 0;
+  let oldfib = 0;
+  let newfib = 1;
+  let currfib = 0;
+  do {
+      currfib = oldfib + newfib;
+      oldfib = newfib;
+      newfib = currfib;
+      console.log(currfib);
+      if (currfib%2 === 0){
+        sum += currfib;
+      }
+  }
+  while (currfib < maxFibValue);
 
   return sum;
 }
